@@ -45,7 +45,7 @@ function ChatWidget() {
           >
             <BsFillChatFill size={20} color="white" />
             {/* Button Text */}
-            <span style={styles.chatWidgetText}>Wanna Chat?</span>
+            <span style={styles.chatWidgetText}>Improvize Chat</span>
           </div>
         </div>
       </div>      
