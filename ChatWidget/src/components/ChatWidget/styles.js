@@ -45,13 +45,58 @@ export const styles = {
 
         //display
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flexDirection: 'column'
 
     },
     chatArea: {
-    // Style for the chat area where messages will be displayed
-        flex: 1,
-        overflowY: 'auto',
+        // ... existing chatArea styles ...
+        padding: '10px',
+        display: 'flex',
+        flexDirection: 'column', // Changed from 'column-reverse' to 'column'
+        overflowY: 'scroll', // Added to enable scrolling
+        height: 'calc(65vh - 60px)', // Adjusted to account for the input area
+    },
+
+    sentMessage: {
+        alignSelf: 'flex-end',
+        backgroundColor: colors.sentMessageBackground, // You'll define this color in your config
+        color: 'white',
+        padding: '8px 12px',
+        borderRadius: '12px',
+        margin: '4px 0',
+        
+        marginBottom: '10px', // Added space between messages
+        maxWidth: 'calc(100% - 20px)', // Ensure padding inside the chat area
+        wordWrap: 'break-word', // Ensure long words do not break the layout
+        fontSize: '0.9rem', // Adjust font size as needed
+        padding: '10px', // Adjust padding as needed
+    },
+
+    receivedMessage: {
+        alignSelf: 'flex-start',
+        backgroundColor: colors.receivedMessageBackground, // You'll define this color in your config
+        color: 'white',
+        padding: '8px 12px',
+        borderRadius: '12px',
+        margin: '4px 0',
+        maxWidth: '75%',
+
+        marginBottom: '10px', // Added space between messages
+        maxWidth: 'calc(100% - 20px)', // Ensure padding inside the chat area
+        wordWrap: 'break-word', // Ensure long words do not break the layout
+        fontSize: '0.9rem', // Adjust font size as needed
+        padding: '10px', // Adjust padding as needed
+    },
+
+    spinnerColor: "#00BFFF", // Example spinner color
+
+    loadingIndicator: {
+        // ... existing loadingIndicator styles ...
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center', // Vertically center the spinner
+        height: '100px', // Give enough space for the spinner
     },
 
     inputArea: {
