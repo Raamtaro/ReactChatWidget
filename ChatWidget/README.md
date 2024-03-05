@@ -12,11 +12,13 @@ HOW TO RUN LOCALLY:
 5. OPTIONAL: If you have a website that you want to embed your code on, go into your index.html file (and/or whichever pages you want to install the chat-widget on) and copy paste the following code right before the closing </body> tag of the page:
 
 ```
-    <div id="chat-widget-container"></div>
+    
     <!-- The below URL is subject to change based on where the most up to date code is being hosted -->
-    <script src="https://65e0f8c0d0a6ef31bf6fbe66--melodic-horse-fb42e0.netlify.app/chat-widget.umd.js"></script> 
+
+    <div id="chat-widget-container"></div>
+    <script src="https://melodic-horse-fb42e0.netlify.app/chat-widget.umd.js"></script>
     <script>
-      ChatWidget('chat-widget-container');
+      ChatWidget('chat-widget-container', 'Improvize'); //ChatWidget(containerID, brand) ---> the brand is sent in the POST request, will default to Improvize if nothing is provided.
     </script>
 
 ```
