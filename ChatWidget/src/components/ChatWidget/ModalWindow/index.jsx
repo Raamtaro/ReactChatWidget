@@ -31,7 +31,7 @@ function ModalWindow(props) {
                 body: JSON.stringify(postData),
             });
             const result = await response.json();
-            console.log(postData)
+            
             // Add the received message to the chat history
             setChatHistory(ch => [...ch, { type: 'received', text: result.answer }]);
         } catch (error) {
