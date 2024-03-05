@@ -31,6 +31,7 @@ function ModalWindow(props) {
                 body: JSON.stringify(postData),
             });
             const result = await response.json();
+            console.log(postData)
             // Add the received message to the chat history
             setChatHistory(ch => [...ch, { type: 'received', text: result.answer }]);
         } catch (error) {
@@ -75,6 +76,12 @@ function ModalWindow(props) {
                     placeholder="Type your message..."
                     style={styles.messageInput}
                     disabled={loading}
+                    onKeyDown={(event) => {
+                        if (event.key === 'Enter' && !event.shiftKey) {
+                            event.preventDefault(); // Prevent the default action to avoid a new line
+                            handleSubmit(message);
+                        }
+                    }}
                 />
                 <button 
                     onClick={() => handleSubmit(message)} 
