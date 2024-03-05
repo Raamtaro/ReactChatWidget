@@ -1,9 +1,11 @@
 import { styles } from "./styles";
 import { BsFillChatFill } from "react-icons/bs";
-import {useState, useEffect, useRef} from "react";
+import React, {useContext, useState, useEffect, useRef} from "react";
 import ModalWindow from "./ModalWindow";
+import BrandContext from "../../BrandContext";
 
 function ChatWidget() {
+    const brand = useContext(BrandContext);
     const [hovered, setHovered] = useState(false);
     const [visible, setVisible] = useState(false);
     const widgetRef = useRef(null);
@@ -45,7 +47,7 @@ function ChatWidget() {
           >
             <BsFillChatFill size={20} color="white" />
             {/* Button Text */}
-            <span style={styles.chatWidgetText}>Improvize Chat</span>
+            <span style={styles.chatWidgetText}>{brand} Chat</span>
           </div>
         </div>
       </div>      

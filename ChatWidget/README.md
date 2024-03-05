@@ -13,7 +13,8 @@ HOW TO RUN LOCALLY:
 
 ```
     <div id="chat-widget-container"></div>
-    <script src="https://65e0f8c0d0a6ef31bf6fbe66--melodic-horse-fb42e0.netlify.app/chat-widget.umd.js"></script>
+    <!-- The below URL is subject to change based on where the most up to date code is being hosted -->
+    <script src="https://65e0f8c0d0a6ef31bf6fbe66--melodic-horse-fb42e0.netlify.app/chat-widget.umd.js"></script> 
     <script>
       ChatWidget('chat-widget-container');
     </script>

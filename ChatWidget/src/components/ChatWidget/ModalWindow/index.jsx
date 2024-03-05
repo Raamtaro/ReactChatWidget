@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { styles } from "./../styles";
 import { BeatLoader } from 'react-spinners';
+import BrandContext from '../../../BrandContext';
 
 function ModalWindow(props) {
     // Chat history array
+    const brand = useContext(BrandContext);
     const [chatHistory, setChatHistory] = useState([]);
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
@@ -19,7 +21,7 @@ function ModalWindow(props) {
         setLoading(true);
 
         try {
-            const postData = {pin: '1945', user: "", query: userMessage, page: null};
+            const postData = {pin: '1945', user: "", query: userMessage, page: null, brand: brand,};
             const response = await fetch("https://app.improvize.com/ichat", {
                 method: "POST", 
                 headers: {
